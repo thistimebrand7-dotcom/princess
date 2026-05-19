@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semangat Mensetsu 💖</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff003c,#ff4d6d,#ff758f);
+      font-family:'Poppins', sans-serif;
+      position:relative;
+    }
+
+    .sakura{
+      position:absolute;
+      top:-10%;
+      animation:sakura linear infinite;
+      opacity:0.8;
+      z-index:1;
+    }
+
+    @keyframes sakura{
+      0%{
+        transform:translateY(-100px) rotate(0deg);
+      }
+      100%{
+        transform:translateY(120vh) rotate(360deg);
+      }
+    }
+
+    .card{
+      width:90%;
+      max-width:430px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(12px);
+      border-radius:30px;
+      padding:30px;
+      text-align:center;
+      color:white;
+      position:relative;
+      z-index:2;
+      border:2px solid rgba(255,255,255,0.2);
+      box-shadow:0 10px 40px rgba(0,0,0,0.2);
+      animation:popup 1s ease;
+    }
+
+    @keyframes popup{
+      from{
+        transform:scale(0.7);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .badge{
+      position:absolute;
+      top:15px;
+      right:15px;
+      background:white;
+      color:#ff003c;
+      padding:6px 12px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:bold;
+    }
+
+    .photo{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid white;
+      margin-bottom:15px;
+      animation:float 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes float{
+      from{
+        transform:translateY(0px);
+      }
+      to{
+        transform:translateY(-10px);
+      }
+    }
+
+    h1{
+      font-family:'Yusei Magic', sans-serif;
+      font-size:32px;
+      margin-bottom:10px;
+    }
+
+    .jp{
+      margin-top:15px;
+      font-size:19px;
+      line-height:1.8;
+      font-weight:600;
+    }
+
+    .romaji{
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.7;
+      opacity:0.95;
+    }
+
+    .arti{
+      margin-top:10px;
+      font-size:14px;
+      line-height:1.7;
+      opacity:0.9;
+    }
+
+    .btn{
+      margin-top:25px;
+      padding:14px 25px;
+      border:none;
+      border-radius:50px;
+      background:white;
+      color:#ff003c;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08) rotate(-2deg);
+      background:#ffe0e7;
+    }
+
+    .secret{
+      display:none;
+      margin-top:20px;
+      animation:fade 1s ease;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+
+    .footer{
+      margin-top:20px;
+      font-size:12px;
+      opacity:0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    for(let i=0;i<40;i++){
+      const sakura=document.createElement('div');
+      sakura.classList.add('sakura');
+      sakura.innerHTML='🌸';
+      sakura.style.left=Math.random()*100+'vw';
+      sakura.style.animationDuration=(Math.random()*5+5)+'s';
+      sakura.style.fontSize=(Math.random()*20+15)+'px';
+      document.body.appendChild(sakura);
+    }
+  </script>
+
+  <div class="card">
+
+    <div class="badge">日本 STYLE 🇯🇵</div>
+
+    <img src="foto.jpg" class="photo" alt="foto pacar">
+
+    <h1>面接がんばって 💖</h1>
+
+    <div class="jp">
+      「大丈夫！！<br>
+      緊張しても、<br>
+      あなたなら絶対できる ✨」
+    </div>
+
+    <div class="romaji">
+      “Daijoubu!!<br>
+      Kinchou shitemo,<br>
+      anata nara zettai dekiru ✨”
+    </div>
+
+    <div class="arti">
+      “Tidak apa-apa walaupun gugup,<br>
+      karena kamu pasti bisa ✨”
+    </div>
+
+    <button class="btn" onclick="showMessage()">
+      PENCET AKU 🍙
+    </button>
+
+    <div class="secret" id="secretMessage">
+      🥺💖<br><br>
+      Aku yakin kamu bakal sukses di mensetsu ini ✨<br>
+      Jadi jangan takut yaaa 🌸<br>
+      Jawab dengan percaya diri dan senyum termanis kamu 💕<br><br>
+      ファイト！！！
+    </div>
+
+    <div class="footer">
+      dibuat khusus buat orang favoritku 🫶
+    </div>
+
+  </div>
+
+  <button onclick="document.getElementById('lagu').play()"
+  style="
+    position:absolute;
+    bottom:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff003c;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:3;
+  ">
+    ▶ Putar Musik Jepang 🎵
+  </button>
+
+  <audio id="lagu" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showMessage(){
+      document.getElementById('secretMessage').style.display='block';
+    }
+  </script>
+
+</body>
+</html>
